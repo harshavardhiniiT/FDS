@@ -1,0 +1,15 @@
+import numpy as np
+from scipy.stats import f_oneway
+
+# Sample data: Exam scores for three teaching methods
+np.random.seed(42)
+method_A_scores = np.random.normal(loc=80, scale=10, size=30)
+method_B_scores = np.random.normal(loc=85, scale=10, size=30)
+method_C_scores = np.random.normal(loc=90, scale=10, size=30)
+
+# Perform one-way ANOVA
+f_statistic, p_value = f_oneway(method_A_scores, method_B_scores, method_C_scores)
+
+print("F-Statistic:", f_statistic)
+print("P-Value:", p_value)
+
